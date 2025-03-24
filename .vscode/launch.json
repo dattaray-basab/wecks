@@ -7,12 +7,21 @@
       "request": "launch",
       "url": "http://localhost:34115",
       "webRoot": "${workspaceFolder}/frontend",
+      "sourceMaps": true,
       "sourceMapPathOverrides": {
         "webpack:///./~/*": "${webRoot}/node_modules/*",
         "webpack:///./*": "${webRoot}/*",
         "webpack:///*": "*",
-        "webpack:///src/*": "${webRoot}/src/*"
-      }
+        "webpack:///src/*": "${webRoot}/src/*",
+        "/@fs/*": "*",
+        "/*": "*",
+        "/./~/*": "${webRoot}/node_modules/*",
+        "/./*": "${webRoot}/*",
+        "/src/*": "${webRoot}/src/*",
+        "/@vite/client": "${webRoot}/node_modules/vite/dist/client/client.mjs"
+      },
+      "trace": true,
+      "userDataDir": false
     },
     {
       "name": "Wails: Debug Backend",
