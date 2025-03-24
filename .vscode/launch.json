@@ -1,0 +1,46 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    
+    {
+      "name": "Wails: Debug Frontend",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:34115",
+      "webRoot": "${workspaceFolder}/frontend",
+      "sourceMapPathOverrides": {
+        "webpack:///./~/*": "${webRoot}/node_modules/*",
+        "webpack:///./*": "${webRoot}/*",
+        "webpack:///*": "*",
+        "webpack:///src/*": "${webRoot}/src/*"
+      }
+    },
+    {
+      "name": "Wails: Debug Backend",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}",
+      "buildFlags": "-tags=desktop,production",
+      "env": {},
+      "args": []
+    },
+    {
+      "name": "Wails: Debug Both",
+      "type": "go",
+      "request": "launch",
+      "mode": "debug",
+      "program": "${workspaceFolder}",
+      "buildFlags": "-tags=desktop,production",
+      "env": {},
+      "args": [],
+      "preLaunchTask": "wails:dev"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Wails: Full Stack Debug",
+      "configurations": ["Wails: Debug Backend", "Wails: Debug Frontend"]
+    }
+  ]
+}
