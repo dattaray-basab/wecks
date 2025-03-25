@@ -20,5 +20,6 @@ To build a redistributable, production mode package, use `wails build`.
 
 
 debugging server:
+go install github.com/go-delve/delve/cmd/dlv@latest
 wails build -debug
 wails dev
